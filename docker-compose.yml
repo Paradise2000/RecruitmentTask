@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  recruitmenttask:
+    image: ${DOCKER_REGISTRY-}recruitmenttask
+    container_name: recruitmenttask.api
+    build:
+      context: .
+      dockerfile: RecruitmentTask/Dockerfile
+
+  recruitmenttask.database:
+    image: postgres:latest
+    container_name: recruitmenttask.database
+    environment:
+        - POSTGRES_DB=recruitmenttask
+        - POSTGRES_USER=recruitmenttask
+        - POSTGRES_PASSWORD=recruitmenttask 
+    ports:
+        - 5431:5432
