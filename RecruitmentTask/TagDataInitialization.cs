@@ -17,7 +17,7 @@ namespace RecruitmentTask
             using (var scope = _scopeFactory.CreateScope())
             {
                 var tagService = scope.ServiceProvider.GetRequiredService<ITagService>();
-                await tagService.GetTagsFromExternalAPI(182);
+                await tagService.GetTagsFromExternalAPI(1300);
             }
         }
 
