@@ -17,10 +17,10 @@ namespace RecruitmentTask.Middleware
             }
             catch(Exception e)
             {
-                //_logger.LogInformation(e.Message);
+                _logger.LogInformation(e.Message);
 
-                //context.Response.StatusCode = 500;
-                //await context.Response.WriteAsJsonAsync("Error somewhere");
+                context.Response.StatusCode = 500;
+                await context.Response.WriteAsJsonAsync("Error somewhere");
             }
         }
     }
